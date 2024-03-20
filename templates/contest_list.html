@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contest List</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            background-image: url("{% static 'images/R (1).jpeg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header class="fixed-top p-auto">
+        <div class="container">
+            <nav class="navbar navbar-expand p-0">
+                <a class="navbar-brand mr-0 pr-4" href="index.html">
+                    <img src="{% static 'images/fest.png' %}" alt="logo" style="width: 120px;">
+                </a>
+                <a href="javascript:void(0)" id="cls-btn">&times;</a>
+                <div class="navbar-collapse nav-sec" id="sidenav">
+                    <ul class="navbar-nav mr-auto header-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link active text-white" href="{% url 'homepage' %}">
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'contestlist' %}">
+                                Contest Lists
+                            </a>
+                        </li>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'participantlist' %}">
+                               Participants Lists
+                            </a>&nbsp;
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'judgeslist' %}">
+                              Judges List
+                            </a>
+                        </li>
+    
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'resultlist' %}">
+                                Result
+                            </a>
+                        </li>
+    
+                     
+                    </ul>
+                </div>
+                    <div class="search-box mr-lg-0">
+                        <input type="text" placeholder="Search here..." name="search1">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                       
+                    
+                </div>
+                 </nav>
+            </div>
+    </header>
+   
+    <div class="card" style="margin-top: 150px; width: 600px;margin-left: 300px; background-color: honeydew;">
+
+        <div class="card-header">
+            <strong class="card-title " style="color:darkorange; font-family:cursive; font-size:x-large;margin-left: 200px;">Contest Lists</strong>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Si_No</th>
+                        <th>Contest_Name</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                    <tr>
+                        <td>{{i.Si_No}}</td>
+                        <td>{{i.Contest_Name}}</td>
+                        
+
+                    </tr>
+                  
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<p style="margin-top: 80px; text-align: center;font-family: monospace;">Discover a world of knowledge, 
+    inspirstion
+    and connections at school fest..
+    A playground for your mind is our school fest..</p>
+</body>
+
+</html>

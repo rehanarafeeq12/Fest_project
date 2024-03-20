@@ -1,0 +1,51 @@
+{% extends 'main_admin.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card" style="width: max-content;">
+        <div class="card-header  bg-primary">
+            <strong class="card-title " style="color:white; margin-left: 400px; font-family: cursive;">Registered School</strong>
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>School_Name</th>
+                        <th>School_Register_No</th>
+                        <th>Correspondent_Name</th>
+                        <th>Principal_Name</th>
+                        <th>Place</th>
+                        <th>Contact_No</th>
+                        <th>Approve</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in data %}
+                    <tr>
+                        <td>{{i.School_Name}}</td>
+                        <td>{{i.School_Register_No}}</td>
+                        <td>{{i.Correspondent_Name}}</td>
+                        <td>{{i.Principal_Name}}</td>
+                        <td>{{i.Place}}</td>
+                        <td>{{i.Contact_No}}</td>
+                        <td>
+                            {% if i.approval_status == 0 %}
+                            <a href="{% url 'approve_school' i.user_id %}" class="btn btn-info" style="width: 80px;">Approve</a>
+                            {% elif i.approval_status == 1 %}
+                            <button class="btn btn-success" style="width: 90px;">Approved</button>
+                            {% else %}
+                            <button class="btn btn-danger">Rejected</button>
+                            {% endif %}
+                        </td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+            </table>
+       
+    </div>
+</div>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,313 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web_Design</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+
+<header class="fixed-top p-auto">
+    <div class="container">
+        <nav class="navbar navbar-expand p-0">
+            <a class="navbar-brand mr-0 pr-4" href="index.html">
+                <img src="{% static 'images/logo9.png' %}" alt="logo" style="width: 120px;">
+            </a>
+            <a href="javascript:void(0)" id="cls-btn">&times;</a>
+            <div class="navbar-collapse nav-sec" id="sidenav">
+                <ul class="navbar-nav mr-auto header-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link active text-white" href="{% url 'homepage' %}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'contestlist' %}">
+                            Contest Lists
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'participantlist' %}">
+                            Participants Lists
+                        </a>&nbsp;
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'judgeslist' %}">
+                            Judges List
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'resultlist' %}">
+                            Result
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="search-box mr-lg-0">
+                    <input type="text" placeholder="Search here..." name="search1">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="menu-icon d-lg-none">
+                    <span class="ml-auto"></span>
+                    <span class="ml-auto"></span>
+                    <span class="ml-auto"></span>
+                </div>
+        </nav>
+    </div>
+</header>
+
+<section class="banner">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        <h1>Celebrate the excellence of our school with annual day</h1>
+        <h6>Let's rejoice in happiness and celebrations!</h6>
+        <a href="#" class="get-started-btn">Get started</a>
+    </div>
+</section>
+
+<section class="index-about-sec">
+    <div class="layer">
+        <div class="container">
+            <h5 data-aos="zoom-in" data-aos-duration="1000">We will make this day as fun and memorable!</h5>
+            <p data-aos="zoom-in" data-aos-duration="1000">The School's annual day is a culmination of the school's
+                academic year. It's a time for celebration and recognisation of the students as well as the school's
+                achievement.The annual day function is considered to be a red-letter day for every school. It's a very
+                special day for the management of the school, students, teachers and parents. On this day the school
+                management shares it's vision and future plans whereas students perfom various cultural activities.
+                Celebrating school's annual day provides the school with an opportunity to showcase it's achievements..
+            </p>
+            <ul class="row">
+                <li class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="index-abt-content">
+                        <h3 style="text-align: center;">Special Guests</h3>
+                        <p> The festival makes our life stunning like the sun shining in the sky...
+                            A special Guest can make the fest Unforgettable..!
+                        </p>
+                        <div style="text-align: center;">
+                            <a href="{% url 'guestlist' %}" class="btn btn-info">View</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="index-abt-content">
+                        <h3 style="text-align: center;">cultural programs</h3>
+                        <p>
+                            Culture is the widening of mind and of the spirit..
+                            Cultura programmes are the main theme of school fest ..!</p><br>
+                        <div style="text-align: center;">
+                            <a href="{% url 'programlist' %}" class="btn btn-info">View</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1400">
+                    <div class="index-abt-content">
+                        <h3 style="text-align: center;">Venues & Volunteers</h3>
+                        <p>
+                            Volunteers don't get paid,not because they're <br>worthless but because they're priceless!
+                        </p><br>
+                        <div style="text-align: center;">
+                            <a href="{% url 'venue_vol' %}" class="btn btn-info">View</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1600">
+                    <div class="index-abt-content">
+                        <h3 style="text-align: center;">Event photoShop</h3>
+                        <p>In school fest
+                            Some capture memories
+                            Some make memories!!
+                            Festivals are all about making memories...!
+                        </p><br>
+                        <div style="text-align: center;">
+                            <a href="{% url 'photoshop' %}" class="btn btn-info">View</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="index-services">
+    <div class="container">
+        <div class="services-filter">
+            <div class="service-list">
+                <h3 class="tab-link current" data-tab="tab-1">school achievements</h3>
+                <h3 class="tab-link" data-tab="tab-2">school management</h3>
+                <h3 class="tab-link" data-tab="tab-3">teachers faculty</h3>
+
+
+
+
+            </div>
+            <div class="service-images">
+                <ul id="tab-1" class="tab-content current">
+                    <li data-aos="fade-up" data-aos-duration="1000">
+
+                        <img src="{% static 'images/achievements1.jpeg' %}" style="width: 250px;">
+
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="1200">
+
+                        <img src="{% static 'images/achievements2.jpg' %}" style="width: 220px; height: 200px;">
+
+                    </li>
+                    <li data-aos="fade-up" data-aos-duration="1400">
+                        <img src="{% static 'images/achievements4.jpg' %}" style="width: 230px; height: 200px;">
+
+                    </li>
+                    <div style="text-align: center;">
+
+                        <h4>School Achievements</h4>
+                        <p>Any great achievement is preceded by many difficulties and many lessons;
+                            great achievements are not possible without a super guide..</p>
+                        <button><a href="{% url 'school_achievements' %}" type="button"
+                                class="article-btn">View</a></button>
+                    </div>
+                </ul>
+                <ul id="tab-2" class="tab-content article-section">
+                    <li>
+                        <img src="{% static 'images/school management.jpeg' %}" style="width: 350px;">
+
+                    </li>
+                    <li>
+                        <img src="{% static 'images/school-management.jpg' %}" style="width: 200px;">
+
+                    </li>
+                    <div style="text-align: center;">
+
+                        <h4>School Managements</h4>
+                        <p>Leadership is not about being incharge; but about inspiring others to unleash their
+                            potential..
+
+                            Unity of management team will results the Excellence of the school..</p>
+                        <button><a href="{% url 'mngmnt' %}" type="button" class="article-btn">View</a></button>
+                    </div>
+
+                </ul>
+                <ul id="tab-3" class="tab-content article-section">
+                    <li>
+                        <img src="{% static 'images/OIP (9).jpeg' %}" style="width: 350px;">
+
+                    </li>
+                    <li>
+                        <img src="{% static 'images/goodteacher.webp' %}" style="width: 200px;">
+
+                    </li>
+                    <div style="text-align: center;">
+
+                        <h4>Teachers Faculty</h4>
+                        <p>One book, one pen, one child and one teacher can change the world..<br>
+                            “Teachers can change lives with the right mix of chalk and challenges.”.. </p>
+                        <button><a href="{% url 'tchrs' %}" type="button" class="article-btn">View</a></button>
+                    </div>
+
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="index-contact">
+    <div class="layer">
+        <div class="container">
+            <h3 data-aos="zoom-in" data-aos-duration="1000">Feedbacks..!</h3>
+            <p data-aos="zoom-in" data-aos-duration="1000">Feedback is essential to growth and development
+                personally and potentially..We all need people who will give us feedback. That’s how we improve our
+                School..
+            </p>
+          
+               <a href="{% url 'feedbacks_add' %}" type="button" class="get-started-btn" style="margin-left: 400px; margin-top: 200px;" >Your Feedbacks</a>
+
+           
+        </div>
+    </div>
+
+    </div>
+</section>
+<footer>
+    <div class="layer">
+        <div class="container">
+            <nav class="navbar navbar-expand  p-0">
+                <a class="navbar-brand mr-0 pr-2 pr-sm-4" href="index.html">
+                    <img src="{% static 'images/kinder feasta.png' %}" alt="logo" style="width: 200px;height: 60px;">
+                </a>
+                <div class="nav-sec">
+                    <ul class="ml-md-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link active text-black" href="index.html">
+                                Home
+                            </a>
+                        </li>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'aboutpage' %}">
+                                About Us
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'contactpage' %}">
+                                Contact
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'supportpage' %}">
+                                Support
+                            </a>
+                        </li>
+                        <li>
+                            <p class="m-0"> ©2024, All Rights Reserved. Designed By Rehana Rafeeq</a></p>
+                        </li>
+                    </ul>
+            </nav>
+
+        </div>
+    </div>
+</footer>
+
+
+<button class="scrolltop-btn">
+    <i class="fa fa-angle-up"></i>
+</button>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+<script>
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+
+</body>
+
+</html>

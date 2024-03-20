@@ -1,0 +1,31 @@
+{% extends 'participant_lists.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Contest_Name</th>
+           
+        </tr>
+    </thead>
+    <tbody>
+        {% for participants in participant %}
+        <tr>
+            <td>{{participants.Name}}</td>
+            <td>{{participants.Class}}</td>
+            <td>{{participants.Contest_Name}}</td>
+            
+
+        </tr>
+
+      
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

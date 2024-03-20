@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+<link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
+
+<link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header class="fixed-top p-auto">
+    <div class="container">
+        <nav class="navbar navbar-expand p-0">
+            <a class="navbar-brand mr-0 pr-4" href="index.html">
+                <img src="{% static 'images/logo9.png' %}" alt="logo" style="width: 120px;">
+            </a>
+            <a href="javascript:void(0)" id="cls-btn">&times;</a>
+            <div class="navbar-collapse nav-sec" id="sidenav">
+                <ul class="navbar-nav mr-auto header-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link active text-white" href="{% url 'homepage' %}">
+                            Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'contestlist' %}">
+                            Contest Lists
+                        </a>
+                    </li>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'participantlist' %}">
+                            Participants Lists
+                        </a>&nbsp;
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'judgeslist' %}">
+                            Judges List
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{% url 'resultlist' %}">
+                            Result
+                        </a>
+                    </li>
+
+                </ul>
+                <div class="search-box mr-lg-0">
+                    <input type="text" placeholder="Search here..." name="search1">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </div>
+                <div class="menu-icon d-lg-none">
+                    <span class="ml-auto"></span>
+                    <span class="ml-auto"></span>
+                    <span class="ml-auto"></span>
+                </div>
+        </nav>
+    </div>
+</header>
+<div class="about-section">
+  <h1 style="margin-top: 60px;">About Us </h1>
+  <p>Kinder Feasta </p>
+  <p>Its for the biggest festival celebrated in school.Let's rejoice the celebration..</p>
+</div>
+<section class="about-page">
+    <div class="container">
+        <h2 data-aos="zoom-in" data-aos-duration="1000">Kinder Feasta</h2>
+        <ul class="row">
+            <li class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+                <figure><img src="{% static 'images/logo9.png' %}" alt="about-page" class="img-fluid"></figure>
+            </li>
+            <li class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+                <p>Kinder Feasta is mainly designed for a school to help the teachers , parents as well as the children also.
+                    This website is designed by a teacher named Rehana Rafeeq.
+                </p>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and scrambled it to make a type specimen book. It has survived not only five centuries, but also
+                    the leap into electronic typesetting, remaining essentially unchanged.</p>
+            </li>
+            <li class="col-12">
+                <p data-aos="fade-up" data-aos-duration="1000">A school fest, also known as a school festival, is an exciting event organized by educational institutions to showcase the talents and creativity of students. Here are some key points about school fests:
+
+                    Purpose and Structure:
+                    Unique Celebration: A school fest is a unique celebration that brings together students, teachers, and sometimes even parents.
+                    Showcasing Talents: It provides a platform for students to exhibit their skills in various fields such as arts, sports, music, dance, drama, literature, and more.
+                    Competition and Collaboration: Participants compete in different events, collaborate with peers, and learn from each other.
+                    Organizational Setup: The organization of school fests involves meticulous planning, 
+                    coordination, and execution. Expert guidelines are followed to ensure a successful event..
+                   </p>
+                <p data-aos="fade-up" data-aos-duration="1300">
+                    Better communication of event details, leading to fewer inquiries and questions from attendees.
+Easy to use user experience.
+Increased Pro Show ticket sales and revenue generation.
+Improved perception and reputation of the Vibrance annual cultural fest among other fests.n today’s digital age, having a school website is crucial for fostering a strong connection between education and the community. Whether you’re a parent, student, teacher, 
+or school administrator, the benefits of a well-designed and regularly updated school website are manifold. Sothat's why having a 
+school website is an absolute must in today’s educational landscape:
+            </li>
+            <li>
+              <p class="m-0"> ©2024, All Rights Reserved. Designed By Rehana Rafeeq</a></p>
+          </li>
+        </ul>
+    </div>
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+
+<script>
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+</script>
+
+</body>
+</html>

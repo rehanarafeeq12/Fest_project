@@ -1,0 +1,29 @@
+{% extends 'admin.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card">
+
+
+    <div class="card-header">
+        <strong class="card-title "
+            style="color:blue; margin-left: 400px; font-family:'Franklin Gothic Medium', 
+            'Arial Narrow', Arial, sans-serif; font-size:x-large;">Photo Gallery
+          </strong>
+    </div>
+    <div class="card-body" "col-2">
+
+        <body>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form|crispy}}
+                <div style="text-align: center;">
+                    <button type="submit" class="btn btn-info">Save</button>
+                </div>
+            </form>
+        </body>
+    </div>
+</div>
+
+
+{% endblock %}

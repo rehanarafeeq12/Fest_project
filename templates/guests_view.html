@@ -1,0 +1,42 @@
+{% extends 'admin.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class="card">
+
+    <div class="card-header">
+        <strong class="card-title "
+            style="color:blue; margin-left: 400px; font-family:'Franklin Gothic Medium', 
+            'Arial Narrow', Arial, sans-serif; font-size:x-large;">Special Guests
+            </strong>
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Photoes</th>
+                    <th>Details</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in data %}
+                <tr>
+                    <td>{{i.Name}}</td>
+                    <td><img src="{{i.Photoes.url}}" style="height: 100px; width: 100px;"> </td>
+                    <td>{{i.Details}}</td>
+                    <td><a href="{% url 'update_guests' i.id %}" type="button" class="btn btn-info">Update</a></td>
+                    <td><a href="{% url 'del_guests' i.id %}" type="button" class="btn btn-danger">Delete</a></td>
+
+
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}
