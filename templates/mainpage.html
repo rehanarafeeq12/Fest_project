@@ -1,10 +1,14 @@
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kinder Feasta</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web_Design</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,41 +20,60 @@
     <link rel="stylesheet" href="{% static 'css/aos.css' %}">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <style>
-        body{
-            background: url("{% static 'images/banner.jpg'%}");
-            
-
-            
-
-        }
-       
-        h1 {
-           font-family:cursive;
-            text-align: center;
-            font-size:50px;
-            font-weight: 500;
-            letter-spacing: -0.6px;
-            line-height: 30px;
-            color: purple
-        }
-        p{
-            text-align: center;
-            font-size:30px;
-            font-family: monospace;
-            font-weight: 300;
-            color:blue;
-
-        }
-    </style>
 </head>
-<body>
+
+<style>
+   
+   
+    h1 {
+       font-family:cursive;
+        text-align: center;
+        font-size:50px;
+        font-weight: 500;
+        letter-spacing: -0.6px;
+        line-height: 30px;
+        color: purple
+    }
+    p{
+        text-align: center;
+        font-size:30px;
+        font-family: monospace;
+        font-weight: 300;
+        color:blue;
+
+    }
+</style>
+
+<section class="banner">
+    <div class="container" data-aos="fade-up" data-aos-duration="1000">
+        
     <img src="{% static 'images\fest.png' %}" style="width: 200px;">
     <h1>Welcome to KinderFeasta</h1><br><br>
-    <p>Create Your Festival Story..</p>
-    <p>Connect, Create, Celebrate..Rejoice in the Festival!</p><br><br>
+    <h6>Create Your Festival Story..</h6>
+    <h6>Connect, Create, Celebrate..Rejoice in the Festival!</h6><br><br>
     <div style="text-align: center;">
-        <a href="{% url 'loginpage' %}" type="button" class="btn btn-danger">Login</a>&nbsp;&nbsp;
+        <a href="{% url 'loginpage' %}" class="get-started-btn">Login</a>
     </div>
-</body>
-</html>
+    <button class="scrolltop-btn">
+        <i class="fa fa-angle-up"></i>
+    </button>
+ </div>
+</section>   
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    
+    <script>
+        $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+            event.preventDefault();
+            $(this).ekkoLightbox();
+        });
+    </script>
+    
+    </body>
+    
+    </html>
